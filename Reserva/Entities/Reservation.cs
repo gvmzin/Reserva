@@ -5,10 +5,12 @@ namespace Reserva.Entities
 {
     internal class Reservation
     {
+        /// Atributos
         public int RoomNumber { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
 
+        /// Construtores
         public Reservation() { }
 
         public Reservation(int roomNumber, DateTime checkIn, DateTime checkOut)
@@ -23,12 +25,16 @@ namespace Reserva.Entities
             CheckOut = checkOut;
         }
 
+        /// Métodos
+
+        /// Método para calcular a duração da reserva
         public int Duration()
         {
             TimeSpan duration = CheckOut.Subtract(CheckIn);
             return (int)duration.TotalDays;
         }
 
+        /// Método para atualizar as datas de check-in e check-out
         public void UpdateDates(DateTime checkIn, DateTime checkOut)
         {
             DateTime now = DateTime.Now;
@@ -45,6 +51,7 @@ namespace Reserva.Entities
             CheckOut = checkOut;
         }
 
+        /// Sobrecarga do método ToString
         public override string ToString()
         {
             return "Room " 

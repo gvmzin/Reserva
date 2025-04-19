@@ -8,6 +8,7 @@ namespace Reserva.Entities.Exceptions
 {
      class DomainException : ApplicationException
     {
+        //Exceção personalizada para o domínio do sistema
         public DomainException(string message) : base(message) { }
     }
 }
