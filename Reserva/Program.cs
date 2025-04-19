@@ -35,6 +35,8 @@ namespace Reserva
                 reservation.UpdateDates(checkIn, checkOut);
                 Console.WriteLine("Reservation: " + reservation);
             }
+
+            // Tratando exceções
             catch (DomainException e)
             {
                 Console.WriteLine("Error in reservation: " + e.Message);
